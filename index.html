@@ -212,6 +212,15 @@ background-image:url('sun.jpg');
             color: white;
             margin-bottom: 180px;
         }
+.muc {
+display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Microsoft Yahei', cursive;
+            text-align: center;
+margin-top: 50px;
+}
 
 .heart {
             font-size: 100px;
@@ -231,6 +240,7 @@ background-image:url('sun.jpg');
             white-space: nowrap;
             overflow: hidden;
             width: 0;
+            font-size: 21px;
             animation: typing 3s steps(30) forwards,
                        blink 0.5s infinite 3s;
         }
@@ -270,9 +280,11 @@ background-image:url('sun.jpg');
 		</div>
 	</div>
 </div>
+<div class="muc">
 <audio controls autoplay >
 <source src="becauseofyou.mp3" type="audio/mpeg">
 </audio>
+</div>
 <script>
         // 更流畅的JavaScript实现版本
         function typeWriter(text, element, speed) {
