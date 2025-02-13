@@ -5,16 +5,18 @@
 <style>
 html,body{
 	height: 100%;
+/*background-image: radial-gradient(#ff0, #f0f, #0ff);*/
+background-image:url('sun.jpg');
 }
 
-body {
+.pic{
 	display: flex;
 	align-items: center;
-	background-image: radial-gradient(#ff0, #f0f, #0ff);
+	
 }
 
 .center{
-	display: inline-block;
+	/*display: inline-block;*/
 	width: 400px;
 	height: 400px;
 	position: relative;
@@ -199,10 +201,58 @@ body {
 	transform: rotateX(-90deg)
 	translateZ(50px);
 }
+
+ .hearDiv {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Microsoft Yahei', cursive;
+            text-align: center;
+            color: white;
+            margin-bottom: 180px;
+        }
+
+.heart {
+            font-size: 100px;
+            animation: heartbeat 1.2s infinite;
+        }
+
+        @keyframes heartbeat {
+            0% { transform: scale(1); }
+            15% { transform: scale(1.3); }
+            30% { transform: scale(1); }
+            45% { transform: scale(1.15); }
+            60% { transform: scale(1); }
+        }
+
+#typewriter {
+            font-family: cursive;
+            white-space: nowrap;
+            overflow: hidden;
+            width: 0;
+            animation: typing 3s steps(30) forwards,
+                       blink 0.5s infinite 3s;
+        }
+
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+
+        @keyframes blink {
+            from, to { border-color: transparent }
+            50% { border-color: black }
+        }
  
 </style>
 </head>
 <body>
+<div class="hearDiv ">
+ <div class="heart">❤️</div>
+ <div id="typewriter"></div>
+</div
+<div class="pic">
 	<div class="center">
 		<div class="main">
 			<div class="front"></div>
@@ -219,5 +269,34 @@ body {
 			<span class="inbottom"></span>
 		</div>
 	</div>
+</div>
+<audio controls autoplay >
+<source src="becauseofyou.mp3" type="audio/mpeg">
+</audio>
+<script>
+        // 更流畅的JavaScript实现版本
+        function typeWriter(text, element, speed) {
+            let i = 0;
+            const target = document.getElementById(element);
+            target.innerHTML = ""; // 清空原始内容
+            
+            function type() {
+                if (i < text.length) {
+                    target.innerHTML += text.charAt(i);
+                    i++;
+                    setTimeout(type, speed);
+                } else {
+                    target.style.borderRight = "none"; // 完成时移除光标
+                }
+            }
+            type();
+        }
+
+        // 页面加载后执行
+        window.onload = function() {
+            const text = "Hello 小高同志， Surprise！我把你放网上啦，嘻嘻。 点击播放还可以听首Music哟...";
+            typeWriter(text, 'typewriter', 100);
+        };
+    </script>
 </body>
 </html>
