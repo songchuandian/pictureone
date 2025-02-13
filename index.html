@@ -1,0 +1,223 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+html,body{
+	height: 100%;
+}
+
+body {
+	display: flex;
+	align-items: center;
+	background-image: radial-gradient(#ff0, #f0f, #0ff);
+}
+
+.center{
+	display: inline-block;
+	width: 400px;
+	height: 400px;
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;       
+}
+
+.main{
+	width:100%;
+	height: 100%;
+	transform-style: preserve-3d;
+	transform: rotateX(-30deg)
+	rotateY(-80deg);
+	animation: turn 20s infinite;
+}
+@keyframes turn{
+	0%{
+		transform: rotateX(0deg)
+		rotateY(0deg);
+	}
+	100%{
+		transform: rotateX(360deg)
+		rotateY(360deg);
+	}
+}
+
+.main div{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+	opacity: 0.5;	
+	transition: all 0.4s;
+	background-size: cover;
+}
+
+.front{
+	background-image: url('img/1.jpg');
+}
+
+.back{
+	background-image: url('img/2.jpg');
+}
+
+.left{
+	background-image: url('img/3.jpg');
+}
+
+.right{
+	background-image: url('img/4.jpg');
+}
+
+.top{
+	background-image: url('img/5.jpg');
+}
+
+.bottom{
+	background-image: url('img/6.jpg');
+}
+
+.infront{
+	background-image: url('img/1.jpg');
+}
+
+.inback{
+	background-image: url('img/2.jpg');
+}
+
+.inleft{
+	background-image: url('img/3.jpg');
+}
+
+.inright{
+	background-image: url('img/4.jpg');
+}
+
+.intop{
+	background-image: url('img/5.jpg');
+}
+
+.inbottom{
+	background-image: url('img/6.jpg');
+}
+
+.main span{
+	display: block;
+	width: 100px;
+	height: 100px;
+	position: absolute;
+	top: 150px;
+	left: 150px;
+	background-size: cover;
+}
+
+.main .front{
+	transform: rotateY(0deg)
+	translateZ(200px);
+}
+
+.main .back{
+	transform: rotateY(180deg)
+	translateZ(200px);
+}
+
+.main .left{
+	transform: rotateY(90deg)
+	translateZ(200px);
+}
+
+.main .right{
+	transform: rotateY(-90deg)
+	translateZ(200px);
+}
+
+.main .top{
+	transform: rotateX(90deg)
+	translateZ(200px);
+}
+
+.main .bottom{
+	transform: rotateX(-90deg)
+	translateZ(200px);
+}
+
+.main:hover .front{
+	transform: rotateY(0deg)
+	translateZ(500px);
+}
+
+.main:hover .back{
+	transform: rotateY(180deg)
+	translateZ(500px);
+}
+
+.main:hover .left{
+	transform: rotateY(90deg)
+	translateZ(500px);
+}
+
+.main:hover .right{
+	transform: rotateY(-90deg)
+	translateZ(500px);
+}
+
+.main:hover .top{
+	transform: rotateX(90deg)
+	translateZ(500px);
+}
+
+.main:hover .bottom{
+	transform: rotateX(-90deg)
+	translateZ(500px);
+}
+
+.main .infront{
+	transform: rotateY(0deg)
+	translateZ(50px);
+}
+
+.main .inback{
+	transform: rotateY(180deg)
+	translateZ(50px);
+}
+
+.main .inleft{
+	transform: rotateY(90deg)
+	translateZ(50px);
+}
+
+.main .inright{
+	transform: rotateY(-90deg)
+	translateZ(50px);
+}
+
+.main .intop{
+	transform: rotateX(90deg)
+	translateZ(50px);
+}
+
+.main .inbottom{
+	transform: rotateX(-90deg)
+	translateZ(50px);
+}
+ 
+</style>
+</head>
+<body>
+	<div class="center">
+		<div class="main">
+			<div class="front"></div>
+			<div class="back"></div>
+			<div class="left"></div>
+			<div class="right"></div>
+			<div class="top"></div>
+			<div class="bottom"></div>
+			<span class="infront"></span>
+			<span class="inback"></span>
+			<span class="inleft"></span>
+			<span class="inright"></span>
+			<span class="intop"></span>
+			<span class="inbottom"></span>
+		</div>
+	</div>
+</body>
+</html>
